@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-main-view',
   imports: [],
   templateUrl: './main-view.html',
-  styleUrl: './main-view.less',
+  styleUrl: './main-view.css',
 })
 export class MainViewComponent {
 

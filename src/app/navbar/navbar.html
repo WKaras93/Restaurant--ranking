@@ -1,1 +1,18 @@
-<p>navbar works!</p>
+<header class="flex h-16 w-full items-center justify-between border-b border-border px-6">
+  <div class="flex items-center">
+    <h1 class="font-extrabold font-display text-xl">Testemap.</h1>
+  </div>
+
+  <div class="flex items-center gap-3">
+    <input placeholder="Search your places" class="search-place-input bg-bg-tertiary hover:bg-primary-hover border border-gray-300 px-3 py-1 rounded-xl hover:text-text-hover" />
+
+    <button class="group rounded-full navbar-action-button border border-gray-300 hover:bg-primary-hover">
+      <mat-icon class="transition-colors group-hover:text-text-hover">nightlight</mat-icon>
+    </button>
+    
+    <mat-icon>refresh</mat-icon>
+    <mat-icon>{{isLogined ? 'account_circle' : 'person'}}</mat-icon>
+    
+    <button class="rounded-md">Add a place</button>
+  </div>
+</header>

@@ -1,0 +1,12 @@
+.search-place-input {
+    width: 250px;
+    height: 40px
+}
+
+.navbar-action-button {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
