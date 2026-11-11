@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-navbar',
-  imports: [],
+  imports: [ MatIconModule ],
   templateUrl: './navbar.html',
-  styleUrl: './navbar.less',
+  styleUrl: './navbar.css',
 })
 export class NavigationBarComponent {
-
+  public isLogined = false;
 }

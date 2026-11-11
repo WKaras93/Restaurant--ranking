@@ -7,7 +7,7 @@ import { NavigationBarComponent } from '../navbar/navbar';
   selector: 'app-home',
   imports: [NavigationBarComponent, MainViewComponent],
   templateUrl: './home.html',
-  styleUrl: './home.less',
+  styleUrl: './home.css',
 })
 export class HomeComponent {
 
