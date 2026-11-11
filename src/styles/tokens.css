@@ -118,6 +118,7 @@
     --color-text-primary: oklch(0.930 0.012 145);
     --color-text-secondary: oklch(0.720 0.018 150);
     --color-text-tertiary: oklch(0.580 0.018 150);
+    --color-text-hover: oklch(0.976 0.010 145);
 
     --color-primary: oklch(0.680 0.110 150);
     --color-primary-hover: oklch(0.750 0.100 150);

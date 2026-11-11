@@ -7,12 +7,22 @@
     <input placeholder="Search your places" class="search-place-input bg-bg-tertiary hover:bg-primary-hover border border-gray-300 px-3 py-1 rounded-xl hover:text-text-hover" />
 
     <button class="group rounded-full navbar-action-button border border-gray-300 hover:bg-primary-hover">
-      <mat-icon class="transition-colors group-hover:text-text-hover">nightlight</mat-icon>
+      <mat-icon class="transition-colors group-hover:!text-text-hover">nightlight</mat-icon>
     </button>
     
-    <mat-icon>refresh</mat-icon>
-    <mat-icon>{{isLogined ? 'account_circle' : 'person'}}</mat-icon>
+    <button class="group rounded-full navbar-action-button border border-gray-300 hover:bg-primary-hover">
+      <mat-icon class="transition-colors group-hover:!text-text-hover">refresh</mat-icon>
+    </button>
+
+    <button class="group rounded-full navbar-action-button border border-gray-300 hover:bg-primary-hover">
+      <mat-icon class="transition-colors group-hover:!text-text-hover">{{isLogined ? 'account_circle' : 'person'}}</mat-icon>
+    </button>
     
-    <button class="rounded-md">Add a place</button>
+    <ng-container *ngIf="isLogined">
+      <button class="group bg-primary-hover hover:bg-bg-tertiary border border-gray-300 px-3 py-1 h-10 rounded-xl text-text-hover flex flex-row items-center">
+        <mat-icon class="transition-colors group-hover:!text-text-primary">add</mat-icon>
+        <p class="group-hover:!text-text-primary">Add a place</p>
+      </button>
+    </ng-container>
   </div>
 </header>
