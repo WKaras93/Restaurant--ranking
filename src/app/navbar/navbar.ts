@@ -9,4 +9,5 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class NavigationBarComponent {
   public isLogined = false;
+  public isSearchOpen = false;
 }

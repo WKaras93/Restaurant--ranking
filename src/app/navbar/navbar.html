@@ -1,16 +1,28 @@
-<header class="flex h-16 w-full items-center justify-between border-b border-border px-6">
+<header class="flex h-12 md:h-16 w-full items-center justify-between border-b border-border px-4 md:px-6">
   <div class="flex items-center">
-    <h1 class="font-extrabold font-display text-xl">Testemap.</h1>
+    <h1 class="font-extrabold font-display text-xl md:text-2xl">Testemap.</h1>
   </div>
 
-  <div class="flex items-center gap-3">
-    <input placeholder="Search your places" class="search-place-input bg-bg-tertiary hover:bg-primary-hover border border-gray-300 px-3 py-1 rounded-xl hover:text-text-hover" />
+  <div class="flex items-center gap-2 md:gap-3">
+    <!-- search input: tablet and up -->
+    <input placeholder="Search your places" class="search-place-input hidden md:block bg-bg-tertiary hover:bg-primary-hover border border-gray-300 px-3 py-1 rounded-xl hover:text-text-hover" />
 
-    <button class="group rounded-full navbar-action-button border border-gray-300 hover:bg-primary-hover">
+    <!-- search icon: mobile only-->
+    <button
+      aria-label="Search places"
+      class="group rounded-full action-mobile-button border border-gray-300 hover:bg-primary-hover md:hidden"
+      (click)="isSearchOpen = true"
+      >
+      <mat-icon class="transition-colors group-hover:!text-text-hover">search</mat-icon>
+    </button>
+
+    <!-- dark mode toggle-->
+    <button class="group rounded-full action-desktop-button hidden border border-gray-300 hover:bg-primary-hover">
       <mat-icon class="transition-colors group-hover:!text-text-hover">nightlight</mat-icon>
     </button>
     
-    <button class="group rounded-full navbar-action-button border border-gray-300 hover:bg-primary-hover">
+    <!-- refresh button-->
+    <button class="group rounded-full action-desktop-button hidden border border-gray-300 hover:bg-primary-hover">
       <mat-icon class="transition-colors group-hover:!text-text-hover">refresh</mat-icon>
     </button>
 
