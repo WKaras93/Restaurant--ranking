@@ -1,4 +1,5 @@
-<div class="shell bg-bg-primary">
-    <app-navbar></app-navbar>
-    <app-main-view></app-main-view>
+<div class="shell flex flex-col bg-bg-primary">
+    <app-navbar class="block shrink-0"></app-navbar>
+    <app-main-view class="block min-h-0 flex-1"></app-main-view>
+    <app-bottom-navigation class="block shrink-0 md:hidden" (syncRequest)="onSync()"></app-bottom-navigation>
 </div>
