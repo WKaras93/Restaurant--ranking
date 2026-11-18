@@ -1,0 +1,16 @@
+<nav aria-label="Main navigation" class="flex shrink-0 items-stretch justify-around border-t border-border bg-bg-primary py-1">
+    <button aria-label="Display places" (click)="toggleDisplayingPlaces()" class="nav-tab group">
+        <mat-icon>home_pin</mat-icon>
+        <p>Places</p>
+    </button>
+
+    <button aria-label="Synchronize" (click)="onSync()" [disabled]="isSyncing" class="nav-tab group">
+        <mat-icon [class.animate-spin]="isSyncing">sync</mat-icon>
+        <p>Sync</p>
+    </button>
+
+    <button aria-label="Toggle theme" class="nav-tab group">
+        <mat-icon>nightlight</mat-icon>
+        <p>Theme</p>
+    </button>
+</nav>

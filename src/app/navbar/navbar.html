@@ -16,25 +16,55 @@
       <mat-icon class="transition-colors group-hover:!text-text-hover">search</mat-icon>
     </button>
 
-    <!-- dark mode toggle-->
-    <button class="group rounded-full action-desktop-button hidden border border-gray-300 hover:bg-primary-hover">
-      <mat-icon class="transition-colors group-hover:!text-text-hover">nightlight</mat-icon>
-    </button>
+    <!-- theme toggle and refresh: table and up-->
+    <div class="hidden items-center gap-3 md:flex">
+      <button aria-label="Toggle theme"class="group rounded-full action-desktop-button hidden border border-gray-300 hover:bg-primary-hover">
+        <mat-icon class="transition-colors group-hover:!text-text-hover">nightlight</mat-icon>
+      </button>
     
-    <!-- refresh button-->
-    <button class="group rounded-full action-desktop-button hidden border border-gray-300 hover:bg-primary-hover">
-      <mat-icon class="transition-colors group-hover:!text-text-hover">refresh</mat-icon>
-    </button>
+      <button aria-label="Refresh" class="group rounded-full action-desktop-button hidden border border-gray-300 hover:bg-primary-hover">
+        <mat-icon class="transition-colors group-hover:!text-text-hover">refresh</mat-icon>
+      </button>
+    </div>
 
-    <button class="group rounded-full navbar-action-button border border-gray-300 hover:bg-primary-hover">
+    <button aria-label="Profile" class="group rounded-full navbar-action-button border border-gray-300 hover:bg-primary-hover">
       <mat-icon class="transition-colors group-hover:!text-text-hover">{{isLogined ? 'account_circle' : 'person'}}</mat-icon>
     </button>
     
     <ng-container *ngIf="isLogined">
-      <button class="group bg-primary-hover hover:bg-bg-tertiary border border-gray-300 px-3 py-1 h-10 rounded-xl text-text-hover flex flex-row items-center">
+      <button aria-label="Add a place" class="group bg-primary-hover hover:bg-bg-tertiary border border-gray-300 px-3 py-1 h-10 rounded-xl text-text-hover flex flex-row items-center">
         <mat-icon class="transition-colors group-hover:!text-text-primary">add</mat-icon>
         <p class="group-hover:!text-text-primary">Add a place</p>
       </button>
     </ng-container>
   </div>
 </header>
+
+<div class="md:hidden">
+  <div id="search-bar"
+       class="grid bg-bg-primary transition-[grid-template-rows] duration-200 ease-out"
+       [ngClass]="isSearchOpen ? 'grid-rows-[1fr] border-b border-border' : 'grid-rows-[0fr]'"
+       [attr.aria-hidden]="!isSearchOpen"
+       [attr.inert]="isSearchOpen ? null : ''">
+    <div class="overflow-hidden">
+      <div class="px-3 py-2">
+        <div class="relative w-full">
+          <mat-icon class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary">search</mat-icon>
+          <input #searchInput
+                 type="search"
+                 placeholder="Search your places"
+                 [value]="query"
+                 (input)="onSearchInput($event)"
+                 (keydown.escape)="closeSearch()"
+                 class="h-11 w-full rounded-xl border border-gray-300 bg-bg-tertiary pl-11 pr-10" />
+          <button *ngIf="query"
+                  type="button" aria-label="Clear search"
+                  (click)="clearSearch()"
+                  class="absolute right-2 top-1/2 grid size-7 -translate-y-1/2 place-items-center rounded-full hover:bg-primary-hover">
+            <mat-icon class="!text-lg">close</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
